@@ -38,7 +38,8 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(displayWidth, displayHeight-130);
+  createCanvas(displayWidth, 0.83*displayHeight);
+  console.log((displayHeight-0.17*displayHeight)/displayHeight);
   games=new Game();
   games.start();
   score = 0;
@@ -80,11 +81,11 @@ function draw() {
   }
   textSize(20);
   fill("red");
-  text("Your Score: "+score,trex.x+350,50);
-  text("High Scorer: "+highScorer,trex.x+750,50);
-  text("High Score: "+highScore,trex.x+750,80);
+  text("Your Score: "+score,trex.x+350,40);
+  text("High Scorer: "+highScorer,trex.x+750,40);
+  text("High Score: "+highScore,trex.x+750,70);
 
-  image(groundImage,-displayWidth/2,displayHeight-160,displayWidth*500,40);
+  image(groundImage,-displayWidth/2,0.76*displayHeight,displayWidth*500,40);
  
   drawSprites();
   if(gameState === PLAY) {
